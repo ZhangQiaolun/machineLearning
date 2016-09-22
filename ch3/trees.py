@@ -1,5 +1,6 @@
 from math import log
 
+# Is it good enough? only calculate the ShannonEnt for the type, what if the feature is the same and dif
 def calcShannonEnt(dataSet):
     numEntries = len(dataSet)
     labelCounts = {}
@@ -22,4 +23,12 @@ def createDataSet():
                [0, 1, 'no']]
     labels = ['no surfacing', 'flippers']
     return dataSet, labels
+
+# dataSet is the dataSet to be divided
+# axis is the feature used to divide the dataSet
+# value is the dataSet to reutrn
+def splitDataSet(dataSet, axis, value):
+    retDataSet = []
+    for featVec in dataSet:
+        if
 
