@@ -1,4 +1,5 @@
 from math import log
+import operator
 
 # Is it good enough? only calculate the ShannonEnt for the type, what if the feature is the same and dif
 def calcShannonEnt(dataSet):
@@ -58,3 +59,34 @@ def chooseBestFeatureToSplit(dataSet):
             bestInfoGain = infoGain
             bestFeature = i
     return bestFeature
+
+# return the class that appear the most time
+def majorityCnt(classList):
+    classCount = {}
+    for vote in classList:
+        if vote not in classCount.keys(): classCount[vote] = 0
+        classCount[vote] += 1
+    # in python3 iteritems() is replaced by items()
+    sortedClassCount = sorted(classCount.iteritems(),
+                              key=operator.itemgetter(1), reverse=1)
+    return sortedClassCount[0][0]
+
+# the exit of the recursion is the name of the class type
+# tree returned is expressed using dict
+def createTree(dataSet, labels):
+    classList = [example[-1] for example in dataSet]
+    if classList.count(classList[0]) == len(classList):
+        return classList[0]
+    if len(dataSet[0]) == 1:
+        return majorityCnt(classList)
+    bestFeat = chooseBestFeatureToSplit(dataSet)
+    bestFeatLabel = labels[bestFeat]
+    myTree = {bestFeatLabel:{}}
+    del(labels[bestFeat])
+    featValues = [example[bestFeat] for example in dataSet]
+    uniqueVals = set(featValues)
+    for value in uniqueVals:
+        subLabels = labels[:]
+        myTree[bestFeatLabel][value] = createTree(splitDataSet(dataSet, bestFeat, value), subLabels)
+    return myTree
+
