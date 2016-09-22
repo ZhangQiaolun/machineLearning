@@ -67,6 +67,8 @@ def majorityCnt(classList):
         if vote not in classCount.keys(): classCount[vote] = 0
         classCount[vote] += 1
     # in python3 iteritems() is replaced by items()
+    #Removed dict.iteritems(), dict.iterkeys(), and dict.itervalues().
+    #Instead: use dict.items(), dict.keys(), and dict.values() respectively.
     sortedClassCount = sorted(classCount.iteritems(),
                               key=operator.itemgetter(1), reverse=1)
     return sortedClassCount[0][0]
