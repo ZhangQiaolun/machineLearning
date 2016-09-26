@@ -4,6 +4,7 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$USER_HOME$/Documents/project/PingPing" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../botnet-1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../new-coder" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../peershark" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../py-botnet" vcs="Git" />
   </component>
