@@ -6,6 +6,7 @@
     <mapping directory="$PROJECT_DIR$/../botnet-1" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../new-coder" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../peershark" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../peersharkPlus" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../py-botnet" vcs="Git" />
   </component>
 </project>
